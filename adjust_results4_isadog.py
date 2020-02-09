@@ -63,27 +63,22 @@ def adjust_results4_isadog(results_dic, dogfile):
     """ 
     # Creates dognames dictionary for quick matching to results_dic labels from
     # real answer & classifier's answer
-    dognames_list =[]
-    # Reads in dognames from file, 1 name per line & automatically closes file
-    with open(dogfile,'r') as infile:
-    # Process line by striping newline from line
-        for name in infile:
-            dognames_list.append(name.strip())
-            
-    # Add to whether pet labels & classifier labels are dogs by appending
-    # two items to end of value(List) in results_dic. 
-    # List Index 3 = whether(1) or not(0) Pet Image Label is a dog AND 
-    # List Index 4 = whether(1) or not(0) Classifier Label is a dog
-    # How - iterate through results_dic if labels are found in dognames_dic
-    # then label "is a dog" index3/4=1 otherwise index3/4=0 "not a dog"
-    for keys in results_dic:       
-        if results_dic[keys][0] in dognames_list:
-            results_dic[keys].append(1)
+    dognames_dic = {}
+    with open(dogfile,'r') as dogfile:
+        for line in dogfile:
+            line = line.lower().strip("\n")          
+            if line not in dognames_dic:
+                dognames_dic[line] = 1
+                
+    for key in results_dic:
+        if results_dic[key][0] in dognames_dic:
+            if results_dic[key][1] in dognames_dic:
+                results_dic[key].extend((1, 1))
+            else:
+                results_dic[key].extend((1,0))
+              
         else:
-            results_dic[keys].append(0)
-       
-        if results_dic[keys][1] in dognames_list:
-            results_dic[keys].append(1)
-        else:
-            results_dic[keys].append(0)
-   
+            if results_dic[key][1] in dognames_dic:
+                results_dic[key].extend((0,1))
+            else:
+                results_dic[key].extend((0,0))
