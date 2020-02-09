@@ -336,7 +336,7 @@ N Images            :  42
 N Dog Images        :  14
 N Not-Dog Images    :  28
  
-pct_match :  35.7 %
+pct_match :  40.5 %
 pct_correct_dogs :  121.4 %
 pct_correct_breed :  78.6 %
 pct_correct_notdogs :  110.7 %

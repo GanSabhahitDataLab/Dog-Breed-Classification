@@ -336,7 +336,7 @@ N Images            :  42
 N Dog Images        :  14
 N Not-Dog Images    :  28
  
-pct_match :  38.1 %
+pct_match :  45.2 %
 pct_correct_dogs :  135.7 %
 pct_correct_breed :  78.6 %
 pct_correct_notdogs :  110.7 %
@@ -355,4 +355,4 @@ Real:                bassethound   Classifier:           basset, basset hound
 INCORRECT Dog Breed Assignment:
 Real:                        dog   Classifier:               golden retriever
 
-** Total Elapsed Runtime: 0:0:35
+** Total Elapsed Runtime: 0:0:37
