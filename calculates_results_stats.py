@@ -125,7 +125,7 @@ def calculates_results_stats(results_dic):
     #
     # Calculates % correct for matches
     if results_stats_dic['n_images'] > 0:
-        results_stats_dic['pct_match'] = (results_stats_dic['n_correct_dogs']/results_stats_dic['n_images'])*100
+        results_stats_dic['pct_match'] = (results_stats_dic['n_match']/results_stats_dic['n_images'])*100
     else:
         results_stats_dic['pct_match'] = 0.0
     # TODO: 5d. REPLACE zero(0.0) with CODE that calculates the % of correctly

@@ -70,7 +70,8 @@ def get_pet_labels(image_dir):
            for word in name_of_files:
                if word.isalpha():
                    pet_label += word + ' '
-                   pet_label = pet_label.strip()
+                
+           pet_label = pet_label.strip()
 
            # If filename doesn't already exist in dictionary add it and it's
            # pet label - otherwise print an error message because indicates 
